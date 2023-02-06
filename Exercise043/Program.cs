@@ -16,7 +16,7 @@ double getVar(string name)
   return value;
 }
 
-double Intersectionline1(double b1, double k1, double b2, double k2)
+double intersectionLine1(double b1, double k1, double b2, double k2)
 {
   if (k1 == k2)
   {
@@ -27,7 +27,7 @@ double Intersectionline1(double b1, double k1, double b2, double k2)
   return (b2 - b1) / (k1 - k2);
 }
 
-double Intersectionline2(double x, double k1, double b1)
+double intersectionLine2(double x, double k1, double b1)
 {
   return k1 * x + b1;
 }
@@ -37,12 +37,12 @@ double k1 = getVar("k1");
 double b2 = getVar("b2");
 double k2 = getVar("k2");
 
-double x = Intersectionline1(b1, k1, b2, k2);
+double x = intersectionLine1(b1, k1, b2, k2);
 if (double.IsNaN(x))
 {
   return;
 }
-double y = Intersectionline2(x, k1, b1);
+double y = intersectionLine2(x, k1, b1);
 
 
 Console.WriteLine("Точка пересечения: (" + x + ", " + y + ")");
